@@ -7,13 +7,6 @@
     = csrf_meta_tags
 
   %body
-    #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-      - elsif flash[:alert]
-        #alert.message= flash[:alert]
     %div.container
       %div.user_nav
         - if member_signed_in?
@@ -23,5 +16,12 @@
         - else
           = link_to "Signup", new_member_registration_path
           = link_to "Login", new_member_session_path
+    #main
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
+      - elsif flash[:alert]
+        #alert.message= flash[:alert]
       %div
         = yield
