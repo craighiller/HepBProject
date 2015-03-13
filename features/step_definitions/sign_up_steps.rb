@@ -7,7 +7,7 @@
 # end
 
 When /^I fill in all fields with: (.*)$/ do |values|
-  fields = ['First Name', 'Last Name', 'Year', 'Phone', 'Email', 'Password', 'Confirm Password']
+  fields = ['First name', 'Last name', 'Year', 'Phone', 'Email', 'Password', 'Password confirmation']
   values = values.gsub(' ','').split(',')
   fields.zip(values).each do |field, value|
     if field == "Year"

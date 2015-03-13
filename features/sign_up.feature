@@ -6,7 +6,7 @@ Feature: signing up as volunteer
 Background: Members in the database
   Given the following members exist: 
   | first_name   | last_name  | year    | phone       | email                 | password  | is_admin | hours |
-  | Craig        | Hiller     | Senior  | 5555555555  | chiller@berkeley.edu  | test      | yes      | 5     |
+  | Craig        | Hiller     | Senior  | 5555555555  | chiller@berkeley.edu  | testtest      | yes      | 5     |
 
   And I am on the portal sign-up page
 

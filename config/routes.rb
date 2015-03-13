@@ -1,16 +1,13 @@
 HepBProject::Application.routes.draw do
   root to: redirect('/members/login')
 
-  devise_for :members, :skip => [:sessions]
-  as :member do
-    get 'sign_in', to: 'devise/sessions#new', as: 'members_login_index'
-    post 'sign_in', to: 'devise/sessions#create', as: 'members_login'
-    delete 'sign_out', to: 'devise/sessions#destroy', as: 'destroy_member_sessions'
-  end
+  devise_for :members
 
-  get 'members/signup', to: 'devise/registration#new', as: 'members_sign_up_index'
+  get 'members/sign_in', to: 'devise/sessions#new', as: 'members_login_index'
+  post 'members/sign_in', to: 'devise/sessions#create', as: 'members_login'
+  get 'members/sign_up', to: 'devise/registration#new', as: 'members_sign_up_index'
   post 'members', to: 'devise/registration#create', as: 'members_sign_up'
-  
+
   get 'members/:id/dashboard_home', to: 'members#dashboard_home', as: 'members_dashboard_home'
 
   # The priority is based upon order of creation:

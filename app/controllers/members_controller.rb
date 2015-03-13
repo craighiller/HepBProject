@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :authenticate_member!, except: [:sign_up, :login_index]
+  before_filter :authenticate_member!, except: [:sign_up, :login_index]
 
   def login_index
   end
