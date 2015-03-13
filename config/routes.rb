@@ -1,4 +1,6 @@
 HepBProject::Application.routes.draw do
+  devise_for :members
+
   root to: redirect('/members/login')
   get 'members/login', to: 'members#login_index', as: 'members_login_index'
   post 'members/login', to: 'members#login', as: 'members_login'

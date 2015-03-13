@@ -11,17 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150312044254) do
+ActiveRecord::Schema.define(:version => 20150313184021) do
 
   create_table "members", :force => true do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "year"
-    t.integer "phone"
-    t.string  "email"
-    t.string  "password"
-    t.boolean "is_admin"
-    t.integer "hours"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "year"
+    t.integer  "phone"
+    t.boolean  "is_admin"
+    t.integer  "hours"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "members", ["email"], :name => "index_members_on_email", :unique => true
+  add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
 
 end

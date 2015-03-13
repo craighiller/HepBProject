@@ -5,8 +5,6 @@ class AddFieldsToMembers < ActiveRecord::Migration
     add_column :members, :last_name, :string
     add_column :members, :year, :string
     add_column :members, :phone, :int
-    add_column :members, :email, :string
-    add_column :members, :password, :string
     add_column :members, :is_admin, :boolean
     add_column :members, :hours, :int
   end
