@@ -1,5 +1,5 @@
 HepBProject::Application.routes.draw do
-  root to: redirect('/members/sign_up')
+  root to: redirect('/members/sign_in')
 
   devise_for :members
 
